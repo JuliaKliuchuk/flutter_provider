@@ -1,4 +1,3 @@
-// EventProvider (Stream)
 class EventProvider {
   Stream<int> intStream() {
     Duration interval = const Duration(seconds: 2);

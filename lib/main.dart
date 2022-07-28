@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider/pages/count-page.dart';
-import 'package:flutter_provider/pages/event-page.dart';
-import 'package:flutter_provider/pages/user-page.dart';
-import 'package:flutter_provider/providers/count-provider.dart';
+import 'package:flutter_provider/pages/count_page.dart';
+import 'package:flutter_provider/pages/event_page.dart';
+import 'package:flutter_provider/pages/user_page.dart';
+import 'package:flutter_provider/providers/count_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(const MyApp());
