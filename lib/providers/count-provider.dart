@@ -4,12 +4,12 @@ class CountProvider extends ChangeNotifier {
   int _count = 0;
   int get counterValue => _count;
 
-  void _incrementCount() {
+  void incrementCount() {
     _count++;
     notifyListeners();
   }
 
-  void _decrementCount() {
+  void decrementCount() {
     _count--;
     notifyListeners();
   }
