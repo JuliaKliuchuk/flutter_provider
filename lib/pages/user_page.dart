@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider/models/model.dart';
+import 'package:provider/provider.dart';
 
 class MyUserPage extends StatelessWidget {
   const MyUserPage({Key? key}) : super(key: key);
@@ -12,16 +14,24 @@ class MyUserPage extends StatelessWidget {
           child: Text('FutureProvider Example, users loaded from a File',
               style: TextStyle(fontSize: 17)),
         ),
-        Expanded(
-          child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Container(
-                  height: 50,
-                  color: Colors.grey[(index * 200) % 400],
-                  child: const Center(child: Text('TEST')));
-            },
-          ),
+        Consumer<List<User>>(
+          builder: (context, List<User> users, _) {
+            return Expanded(
+              child: users.isEmpty
+                  ? const Center(child: CircularProgressIndicator())
+                  : ListView.builder(
+                      itemCount: users.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                            height: 50,
+                            color: Colors.grey[(index * 200) % 400],
+                            child: Center(
+                                child: Text(
+                                    '${users[index].firstName} ${users[index].lastName} | ${users[index].website}')));
+                      },
+                    ),
+            );
+          },
         ),
       ],
     );
